@@ -28,9 +28,10 @@ DEFAULT_SEARCH_MARKUP = [
 async def start_handler(_, message: Message):
     try:
         await message.reply_text(
-            text="<b>Hello, I am Torrent Search Bot<b>!\n"
-                 "<b>I can search Torrent Magnetic Links from Inline</b>.\n\n"
-                 "<b>Made by @Mo_Tech_YT</b>",
+            text="**Hello, {update.from_user.mention}\n"
+                 "I am Torrent Search Bot!\n"
+                 "I can search Torrent Magnetic Links from Inline.\n\n"
+                 "Made by @Mo_Tech_YT**",
             disable_web_page_preview=True,
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(DEFAULT_SEARCH_MARKUP)
