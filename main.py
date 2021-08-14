@@ -28,7 +28,7 @@ DEFAULT_SEARCH_MARKUP = [
 async def start_handler(_, message: Message):
     try:
         await message.reply_text(
-            text="**Hello, {update.from_user.mention}\n"
+            text="**Hello, {message.from_user.mention}\n"
                  "I am Torrent Search Bot!\n"
                  "I can search Torrent Magnetic Links from Inline.\n\n"
                  "Made by @Mo_Tech_YT**",
