@@ -11,15 +11,16 @@ from tool import SearchYTS, SearchAnime, Search1337x, SearchPirateBay
 
 TorrentBot = Client(session_name=Config.SESSION_NAME, api_id=Config.API_ID, api_hash=Config.API_HASH, bot_token=Config.BOT_TOKEN)
 DEFAULT_SEARCH_MARKUP = [
-                    [InlineKeyboardButton("Search YTS", switch_inline_query_current_chat="!yts "),
-                     InlineKeyboardButton("Go Inline", switch_inline_query="!yts ")],
-                    [InlineKeyboardButton("Search ThePirateBay", switch_inline_query_current_chat="!pb "),
-                     InlineKeyboardButton("Go Inline", switch_inline_query="!pb ")],
-                    [InlineKeyboardButton("Search 1337x", switch_inline_query_current_chat=""),
-                     InlineKeyboardButton("Go Inline", switch_inline_query="")],
-                    [InlineKeyboardButton("Search Anime", switch_inline_query_current_chat="!a "),
-                     InlineKeyboardButton("GO Inline", switch_inline_query_current_chat="!a ")],
-                    [InlineKeyboardButton("Developer: @AbirHasan2005", url="https://t.me/AbirHasan2005")]
+                    [InlineKeyboardButton("🔍Search YTS", switch_inline_query_current_chat="!yts "),
+                     InlineKeyboardButton("📍Go Inline", switch_inline_query="!yts ")],
+                    [InlineKeyboardButton("🔍Search ThePirateBay", switch_inline_query_current_chat="!pb "),
+                     InlineKeyboardButton("📍Go Inline", switch_inline_query="!pb ")],
+                    [InlineKeyboardButton("🔍Search 1337x", switch_inline_query_current_chat=""),
+                     InlineKeyboardButton("📍Go Inline", switch_inline_query="")],
+                    [InlineKeyboardButton("🔍Search Anime", switch_inline_query_current_chat="!a "),
+                     InlineKeyboardButton("📍Go Inline", switch_inline_query_current_chat="!a ")],
+                    [InlineKeyboardButton("🗣️Support", url="https://t.me/Mo_Tech_Group"),
+                     InlineKeyboardButton("📢Bot Updates", url="https://t.me/Mo_Tech_Group")]
                 ]
 
 
@@ -27,9 +28,9 @@ DEFAULT_SEARCH_MARKUP = [
 async def start_handler(_, message: Message):
     try:
         await message.reply_text(
-            text="Hello, I am Torrent Search Bot!\n"
-                 "I can search Torrent Magnetic Links from Inline.\n\n"
-                 "Made by @AbirHasan2005",
+            text="<b>Hello, I am Torrent Search Bot<b>!\n"
+                 "<b>I can search Torrent Magnetic Links from Inline</b>.\n\n"
+                 "<b>Made by @Mo_Tech_YT</b>",
             disable_web_page_preview=True,
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(DEFAULT_SEARCH_MARKUP)
@@ -47,10 +48,10 @@ async def inline_handlers(_, inline: InlineQuery):
     if search_ts == "":
         answers.append(
             InlineQueryResultArticle(
-                title="Search Something ...",
-                description="Search For Torrents ...",
+                title="🔍Search Something ...",
+                description="🔍Search For Torrents ...",
                 input_message_content=InputTextMessageContent(
-                    message_text="Search for Torrents from Inline!",
+                    message_text="🔍Search for Torrents from Inline!",
                     parse_mode="Markdown"
                 ),
                 reply_markup=InlineKeyboardMarkup(DEFAULT_SEARCH_MARKUP)
@@ -67,7 +68,7 @@ async def inline_handlers(_, inline: InlineQuery):
                         message_text="`!pb [text]`\n\nSearch ThePirateBay Torrents from Inline!",
                         parse_mode="Markdown"
                     ),
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Search Again", switch_inline_query_current_chat="!pb ")]])
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍Search Again🔎", switch_inline_query_current_chat="!pb ")]])
                 )
             )
         else:
@@ -81,7 +82,7 @@ async def inline_handlers(_, inline: InlineQuery):
                             message_text=f"No Torrents Found For `{query}` in ThePirateBay !!",
                             parse_mode="Markdown"
                         ),
-                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Try Again", switch_inline_query_current_chat="!pb ")]])
+                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔃Try Again🔃", switch_inline_query_current_chat="!pb ")]])
                     )
                 )
             else:
@@ -102,7 +103,7 @@ async def inline_handlers(_, inline: InlineQuery):
                                 parse_mode="Markdown"
                             ),
                             reply_markup=InlineKeyboardMarkup(
-                                [[InlineKeyboardButton("Search Again", switch_inline_query_current_chat="!pb ")]])
+                                [[InlineKeyboardButton("🔍Search Again🔃", switch_inline_query_current_chat="!pb ")]])
                         )
                     )
     elif search_ts.startswith("!yts"):
@@ -132,7 +133,7 @@ async def inline_handlers(_, inline: InlineQuery):
                             parse_mode="Markdown"
                         ),
                         reply_markup=InlineKeyboardMarkup(
-                            [[InlineKeyboardButton("Try Again", switch_inline_query_current_chat="!yts ")]])
+                            [[InlineKeyboardButton("🔃Try Again🔃", switch_inline_query_current_chat="!yts ")]])
                     )
                 )
             else:
@@ -154,7 +155,7 @@ async def inline_handlers(_, inline: InlineQuery):
                                 parse_mode="Markdown",
                                 disable_web_page_preview=True
                             ),
-                            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Search Again", switch_inline_query_current_chat="!yts ")]]),
+                            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍Search Again🔃", switch_inline_query_current_chat="!yts ")]]),
                             thumb_url=torrentList[i]["Poster"]
                         )
                     )
@@ -205,7 +206,7 @@ async def inline_handlers(_, inline: InlineQuery):
                                 parse_mode="Markdown"
                             ),
                             reply_markup=InlineKeyboardMarkup(
-                                [[InlineKeyboardButton("Search Again", switch_inline_query_current_chat="!a ")]]
+                                [[InlineKeyboardButton("🔍Search Again🔃", switch_inline_query_current_chat="!a ")]]
                             )
                         )
                     )
@@ -221,7 +222,7 @@ async def inline_handlers(_, inline: InlineQuery):
                         parse_mode="Markdown"
                     ),
                     reply_markup=InlineKeyboardMarkup(
-                        [[InlineKeyboardButton("Try Again", switch_inline_query_current_chat="")]])
+                        [[InlineKeyboardButton("🔃Try Again🔃", switch_inline_query_current_chat="")]])
                 )
             )
         else:
@@ -245,7 +246,7 @@ async def inline_handlers(_, inline: InlineQuery):
                             parse_mode="Markdown"
                         ),
                         reply_markup=InlineKeyboardMarkup(
-                            [[InlineKeyboardButton("Search Again", switch_inline_query_current_chat="")]]
+                            [[InlineKeyboardButton("🔍Search Again🔃", switch_inline_query_current_chat="")]]
                         ),
                         thumb_url=torrentList[i]['Poster']
                     )
