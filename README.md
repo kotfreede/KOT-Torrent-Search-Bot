@@ -13,7 +13,7 @@ Click Below Button to Deploy to Heroku:
 
 ### Deploy Locally
 ```shell
-git clone  
+git clone https://github.com/kotfreede/KOT-Torrent-Search-Bot/blob/main/README.md
 pip3 install -r requirements.txt
 python3 main.py
 ```
