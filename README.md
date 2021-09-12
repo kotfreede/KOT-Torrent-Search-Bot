@@ -1,6 +1,6 @@
 # Torrent-Search-Bot
 
-A Simple Telegram Inline Torrent Search Bot by [@AbirHasan2005](https://github.com/AbirHasan2005).
+A Simple Telegram Inline Torrent Search Bot by [@KOTFREEDE](https://github.com/KOTFREEDE).
 
 ## Torrent API
 - Using [api.abirhasan.wtf](https://api.abirhasan.wtf/) API
@@ -13,8 +13,7 @@ Click Below Button to Deploy to Heroku:
 
 ### Deploy Locally
 ```shell
-git clone https://github.com/MoTechYT/Torrent-Search-Bot
-cd Torrent-Search-Bot
+git clone  
 pip3 install -r requirements.txt
 python3 main.py
 ```
